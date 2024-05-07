@@ -8,6 +8,7 @@ import { MovieComponent } from './comps/movie/movie.component';
 import { MoviesComponent } from './comps/movies/movies.component';
 import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RecommendationsComponent } from './comps/recommendations/recommendation
     MovieComponent,
     MoviesComponent,
     WishlistComponent,
-    RecommendationsComponent
+    RecommendationsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
