@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { AppComponent } from '@angular/core';
 
-@Component({
+@AppComponent({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.css'
