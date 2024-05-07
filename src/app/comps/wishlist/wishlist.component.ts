@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
+import { Movie } from '../../movie.interface';
 
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
-  styleUrls: './wishlist.component.css'
+  styleUrl: './wishlist.component.css'
 })
+
+
+
 export class WishlistComponent {
   movies: Movie[] = []; // Initialize an empty array to store movies
+  wishlist: Movie[]=[]
 
-  // Define a Movie interface to represent the structure of the movie
-  // interface Movie{
-  //   title : string;
-  //   Year : number;
-  //   genre : string;
-  //   poster : string;
-
-  // }
+  
  addToWishlist(movieId: number): void{
   const movie = this.movies.find(m => m.id === movieId);
-  if (movie && !this.addToWishlist.some(m => m.id === movie.id)){
+  if (movie && !this.wishlist.some(m => m.id === movie.id)){
     this.wishlist.push(movie);
   }
  }
