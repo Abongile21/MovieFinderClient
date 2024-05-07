@@ -1,21 +1,11 @@
-<div class="wishlist">
-    <h1>Wishlist</h1>
+<div id="wishlistContainer">
+
+  <div *ngFor="let movie of movies" id="movieItem">
+    <img [src]="movie.image" alt="{{ movie.title }}">
+    <h2>{{ movie.title }}</h2>
+    <p><strong>Genre:</strong> {{ movie.genre }}</p>
+    <p><strong>Year:</strong> {{ movie.year }}</p>
+  </div>
+     
   
-    <div *ngIf="movies.length === 0">
-      <p>Your wishlist is empty.</p>
-    </div>
-  
-    <ul *ngIf="movies.length > 0">
-      <li *ngFor="let movie of movies">
-        <div class="movie-item">
-          <img [src]="movie.poster" alt="{{ movie.title }} Poster" class="poster">
-          <div class="movie-details">
-            <h2>{{ movie.title }}</h2>
-            <p>{{ movie.Year }}</p>
-            <p>{{ movie.genre }}</p>
-          </div>
-          <button (click)="removeFromWishlist(movie)" class="remove-button">Remove</button>
-        </div>
-      </li>
-    </ul>
 </div>

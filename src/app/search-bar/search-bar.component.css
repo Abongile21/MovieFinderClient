@@ -22,3 +22,15 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+#movieNameInput{
+    border-radius: 20px;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    border: solid black 2px;
+    color: black;
+    margin-left: 50px;   
+}
+#movieNameInput:hover{
+    background-color:wheat;
+}
