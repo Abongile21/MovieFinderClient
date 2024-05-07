@@ -210,6 +210,7 @@ html, body {
 
 ul {
     list-style: none;
+    color: white;
 }
 
 .footer {
@@ -315,3 +316,28 @@ ul {
       60%{background-position:0%  50%, 50% 100%,100%   0%}
       80%{background-position:0%  50%, 50%  50%,100% 100%}
   }
+  .sidebar {
+    width: 200px;
+    background-color: black;
+    
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+
+
+
+
+
+
+
+
