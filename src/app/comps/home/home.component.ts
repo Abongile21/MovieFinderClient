@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-search-bar',
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.css']
 })
-export class HomeComponent {
-  
+export class SearchBarComponent {
+  searchTerm: string;
+
+  performSearch() {
+    // Implement your search logic here
+    console.log('Performing search for:', this.searchTerm);
+  }
 }

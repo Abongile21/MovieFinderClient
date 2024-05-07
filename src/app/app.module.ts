@@ -9,6 +9,7 @@ import { MoviesComponent } from './comps/movies/movies.component';
 import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
 import { SearchComponent } from './search/search.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchComponent } from './search/search.component';
     MoviesComponent,
     WishlistComponent,
     RecommendationsComponent,
-    SearchComponent
+    SearchComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
