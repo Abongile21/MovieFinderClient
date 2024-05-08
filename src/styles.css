@@ -1,107 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
     font: 15px/1.5 Arial, Helvetica, sans-serif;
     background: linear-gradient(100deg,grey, green);
     background-size: cover;
 }
-.container{
-    width: 80%;
-    overflow: hidden;
-    margin-left: 20px;
-}
-/*header*/
-
-.nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s; /* Smooth color transition */
-}
-  
- 
-  
-.nav ul li a:active {
-    color: green; /* Gray color for visited links */
-}
-  
-
-
-.header{
-    background: black;
-    color: white;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: rgb(87, 151, 87) 3px solid;
-}
-.header a{
-    color:white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.header ul{
-    margin-left: 6px;
-    padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-}
-.header li{
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-.header #branding{
-    float: left;
-}
-.header #branding h1{
-    margin: 0;
-}
-.header nav{
-    float: right;
-    margin-top: 10px;
-}
-.header .highlight{
-    color: green;
-    font-weight: bold;
-}
-.header a:hover{
-    color: palevioletred;
-    font-weight: bold;
-}
-.header h1{
-    text-shadow: 2px 2px 2px black;
-    font-size: 40px;
-} 
-
-.filters{
-    right: 35%;
-    position: absolute;
-    bottom: 50%;
-    display: flex;
-    align-content: space-around;
-    gap: 0.5rem;
-}
-#movieNameInput{
-    border-radius: 20px;
-    width: 250px;
-    height: 30px;
-    text-align: center;
-    border: solid black 2px;
-    color: black;
-    margin-left: 50px;   
-}
-#movieNameInput:hover{
-    background-color:wheat;
-}
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-/*Movie card*/
 
 .movieItem, .wishlistItem {
     padding: 5px;
@@ -187,12 +93,6 @@ html, body {
     text-decoration: none;
     color: black;
 }
-/*---------------------slideshow----------------------*/
-/* #imageshow img{
-    height: 250px;
-} */
-/*footer*/
-
 * {
     margin: 0;
     padding: 0;

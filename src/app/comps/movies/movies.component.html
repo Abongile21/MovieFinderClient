@@ -1,6 +1,9 @@
-<div *ngFor="let movie of movies" class="moviesList">
-  <h3>{{ movie.title }}</h3>
-  <img src="{{movie.image}}" alt="{{movie.title}}">
-  <!-- <p>{{ movie.description }}</p> -->
-  <button (click)="addToWishlist(movie)">Add to Wishlist</button>
+<div class="movieList">
+  <div *ngFor="let movie of movies" class="movieItem">
+    <h3>{{ movie.title }}</h3>
+    <img src="{{movie.image}}" alt="{{movie.title}}">
+    <!-- <p>{{ movie.description }}</p> -->
+    <button (click)="addToWishlist(movie)">Add to Wishlist</button>
+  </div>
+  
 </div>
