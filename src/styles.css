@@ -8,6 +8,14 @@ body{
     background: linear-gradient(100deg,grey, green);
     background-size: cover;
 }
+   
+.movieList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 1px;
+    padding: 10px; 
+}
+
 
 .movieItem, .wishlistItem {
     padding: 5px;
