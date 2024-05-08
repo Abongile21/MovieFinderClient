@@ -22,10 +22,10 @@ export class MovieService {
   }
 
   addToWishlist(movie: Movie){
-    const movieAlready = this.wishList.find(({title}) => title === movie.title); // find product by name
+    const movieAlready = this.wishList.find(({title}) => title === movie.title);
     if (!movieAlready) {
       this.wishList.push(movie); 
-      // this.wishList.length;
+    
       this.favList.next(this.favList.value + 1);
       console.log(this.favList.value)
       return;

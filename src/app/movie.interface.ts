@@ -1,12 +1,10 @@
 
-  export interface Movie{
-    id: number;
-    title : string;
-    Year : number;
-    genre : string;
-    poster : string;
+  export interface Movie {
+    title: string;
     image: string;
+    genre: string;
+    year: string;
+    language: string;
     description: string;
-    YTUrl:string;
-
+    YTUrl: string;
 }
