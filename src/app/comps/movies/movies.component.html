@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div *ngIf="!showMainList">
+  <div *ngIf="!showMainList" class="movieList">
     <!-- Search Results -->
     <div *ngFor="let movie of filteredMovies" class="movieItem">
       <img src="{{ movie.image }}" alt="{{ movie.title }}">
