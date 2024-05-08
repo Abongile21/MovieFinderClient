@@ -1,47 +1,31 @@
-<<<<<<< HEAD
-<app-search-bar (searchQueryChange)="searchMovie($event)"></app-search-bar>
+<!-- 
 <div *ngIf="loading; else moviesList">
   <p>Loading...</p>
-</div>
-<ng-template #moviesList>
+</div> -->
+<!-- <ng-template #moviesList>
   <app-movies [movies]="movies" (addToWishlist)="addToWishlist($event)"></app-movies>
   <app-wishlist [wishlist]="wishlist" (removeFromWishlist)="removeFromWishlist($event)"></app-wishlist>
-  <app-recommendation [recommendedMovies]="recommendedMovies"></app-recommendation>
-</ng-template>
-=======
-    <header>
+  <app-recommendation [recommendedMovies]="recommendedMovies"></app-recommendation> -->
+<!-- </ng-template> -->
+<header>
         <div class="container">
           <div id="branding">
             <h1><span class="highlight">Movie</span>Nites</h1>
           </div>
-          <input type="text" placeholder="Enter movie Name" required  id="movieNameInput" onkeyup="searchMovie()">
+          <app-search-bar (searchQueryChange)="searchMovie($event)"></app-search-bar>
            <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#" onclick="fetchWishlist()">WishList</a></li>
-                    <li><a href="#" onclick="recommendMovies()">Recommendation</a></li>
+                    <li><a routerLink="home">Home</a></li>
+                    <li><a routerLink="wishlist">WishList</a></li>
+                    <li><a routerLink="recommendations">Recommendation</a></li>
                 </ul>
            </nav>
         </div>   
     </header>
 
-    <div id="searchResultContainer"></div>
-    <div id="recommendationContainer">
-        <h4>This is what we think you might like</h4>
-        <div class="loader"></div>
-    </div>
-    <div id="wishlistContainer">
-    </div>
 
     <!-- <div id="imageshow"></div> -->
 
-    <div class="sidebar">
-        <ul>
-          <li>HOME</li>
-          <li>WISHLIST</li>
-          <li>RECOMMENDATION</li>
-        </ul>
-      </div>
     
     <footer class="footer">
         <div class="container3">
@@ -71,4 +55,3 @@
             </div>
         </div>
     </footer>
->>>>>>> fbb556474c06d1a626befd62910ed5c835359c6e

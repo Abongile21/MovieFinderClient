@@ -10,6 +10,7 @@ import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
 // import { SearchComponent } from './search/search.component';
 import { SearchBarComponent } from './comps/search-bar/search-bar.component';
+import { NavBarComponent } from './comps/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SearchBarComponent } from './comps/search-bar/search-bar.component';
     WishlistComponent,
     RecommendationsComponent,
     // SearchComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
