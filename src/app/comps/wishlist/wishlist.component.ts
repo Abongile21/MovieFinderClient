@@ -10,8 +10,8 @@ import { Movie } from '../../movie.interface';
 
 
 export class WishlistComponent {
-  movies: Movie[] = []; // Initialize an empty array to store movies
-  wishlist: Movie[]=[]
+  movies: Movie[] = [];
+  wishlist: Movie[]=[];
 
   
  addToWishlist(movieId: number): void{
@@ -20,7 +20,6 @@ export class WishlistComponent {
     this.wishlist.push(movie);
   }
  }
-  // Method to remove movies from the wishlist
   removeFromWishlist(movie : Movie): void{
     const index = this.movies.findIndex(m => m.title === movie.title );
     if (index !== -1) {

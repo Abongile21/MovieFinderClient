@@ -1,33 +1,10 @@
-<!-- 
-<div *ngIf="loading; else moviesList">
-  <p>Loading...</p>
-</div> -->
-<!-- <ng-template #moviesList>
-  <app-movies [movies]="movies" (addToWishlist)="addToWishlist($event)"></app-movies>
-  <app-wishlist [wishlist]="wishlist" (removeFromWishlist)="removeFromWishlist($event)"></app-wishlist>
-  <app-recommendation [recommendedMovies]="recommendedMovies"></app-recommendation> -->
-<!-- </ng-template> -->
-<header>
-        <div class="container">
-          <div id="branding">
-            <h1><span class="highlight">Movie</span>Nites</h1>
-          </div>
-          <app-search-bar (searchQueryChange)="searchMovie($event)"></app-search-bar>
-           <nav>
-                <ul>
-                    <li><a routerLink="home">Home</a></li>
-                    <li><a routerLink="wishlist">WishList</a></li>
-                    <li><a routerLink="recommendations">Recommendation</a></li>
-                </ul>
-           </nav>
-        </div>   
-    </header>
+<app-nav-bar></app-nav-bar>
 
-
-    <!-- <div id="imageshow"></div> -->
+<app-movies></app-movies>
 
     
-    <footer class="footer">
+
+<footer class="footer">
         <div class="container3">
             <div class="row">
                 <div class="footer-col">
@@ -54,4 +31,4 @@
                 </div>
             </div>
         </div>
-    </footer>
+</footer>
