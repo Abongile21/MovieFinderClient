@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Movie } from '../movie.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
   private apiUrl = 'http://localhost:4001/api/movies/titles';
+
+  favList = new BehaviorSubject<number>(0)
+  wishList:Movie[] = []
 
   constructor(private http: HttpClient) { }
 
@@ -16,5 +20,23 @@ export class MovieService {
   getMovieById(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
+
+  addToWishlist(movie: Movie){
+    const movieAlready = this.wishList.find(({title}) => title === movie.title); // find product by name
+    if (!movieAlready) {
+      this.wishList.push(movie); 
+      // this.wishList.length;
+      this.favList.next(this.favList.value + 1);
+      console.log(this.favList.value)
+      return;
+    }else{
+      console.log("Movie already Exist!")
+    }
+  }
+
+  getWishilist():Movie[]{
+    return this.wishList;
+  }
+
 
 }

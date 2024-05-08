@@ -32,15 +32,11 @@ export class MoviesComponent implements OnInit {
 
  }
 
- addToWishlist( item: Movie) {
-    const movieExistAlready =  this.wishlist.find(({title})=> title === item.title)
-
-    if(!movieExistAlready){
-      this.wishlist.push(item)
-      return
-    }
-    console.log("Movie already in wishlist!")
+ addToWishlist(item: Movie) {
+    this.movieService.addToWishlist(item)
   }
+
+  
   viewMovie(id: Movie) {
     
   }
