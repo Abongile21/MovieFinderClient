@@ -6,7 +6,7 @@ import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'wishlist', component: WishlistComponent },

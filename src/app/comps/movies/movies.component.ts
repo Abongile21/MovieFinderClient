@@ -20,7 +20,7 @@ export class MoviesComponent implements OnInit {
  }
 
  getAllMOvies(){
-  this.movieService.getAllMovies().subscribe({
+  this.movieService.getMovies().subscribe({
     next: (data)=>{
       this.movies = data
       console.log(data)

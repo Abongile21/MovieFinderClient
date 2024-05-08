@@ -6,20 +6,10 @@ import { MovieService } from '././services/movie.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   movies: any[] = [];
 
   constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {
-    this.movieService.getMovies()
-      .subscribe(
-        (data: any) => {
-          this.movies = data.results;
-        },
-        (error: any) => {
-          console.log(error);
-        }
-      );
-  }
+ 
 }
