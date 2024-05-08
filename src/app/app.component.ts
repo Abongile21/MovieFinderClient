@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from './movie.service';
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   movies: any[] = [];
