@@ -9,7 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchBarComponent {
 query: any;
 searchComponent: any;
-onSearch() {
+onSearch() {   
 throw new Error('Method not implemented.');
 }
 
