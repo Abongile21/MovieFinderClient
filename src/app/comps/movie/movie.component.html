@@ -1,12 +1,18 @@
-<!-- <div *ngIf="movie">
-    <h2>{{ movie.title }}</h2>
-    <img [src]="movie.image" alt="{{ movie.title }}">
-  
-    <p><strong>Genre:</strong> {{ movie.genre }}</p>
-    <p><strong>Year:</strong> {{ movie.year }}</p>
-    <p><strong>Language:</strong> {{ movie.language }}</p>
-    <p><strong>Description:</strong> {{ movie.description }}</p>
-    <hr>
-    <button (click)="playTrailer(movie.YTUrl)">Play Trailer</button>
+<div *ngIf="movies">
+  <div class="details">
+    <div class="image">
+      <h2>{{ movies.title }}</h2>
+      <img [src]="movies.image" alt="{{ movies.title }}">
+    </div>
+    <div class="info">
+      <p><strong>Genre:</strong> {{ movies.genre }}</p>
+      <p><strong>Year:</strong> {{ movies.year }}</p>
+      <p><strong>Language:</strong> {{ movies.language }}</p>
+    </div>
   </div>
-   -->
+  <p><strong>Description:</strong> {{ movies.description }}</p>
+  <hr>
+  <video controls>
+    <source [src]="movies.YTUrl" type="video/mp4">
+  </video>
+</div>

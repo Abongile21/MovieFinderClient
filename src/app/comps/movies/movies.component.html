@@ -2,8 +2,8 @@
   <app-search-bar (searchChange)="onSearchChange($event)"></app-search-bar>
 </div>
 
-<div class="movieList">
-  <div *ngIf="showMainList">
+
+  <div *ngIf="showMainList" class="movieList">
     <!-- Main Movie List -->
     <div *ngFor="let movie of movies" class="movieItem">
       <img src="{{ movie.image }}" alt="{{ movie.title }}">
@@ -11,8 +11,8 @@
       <p>{{ movie.genre }}</p>
       <p>{{ movie.year }}</p>
       <button (click)="addToWishlist(movie)">like</button>
-    </div>
   </div>
+  
 
   <div *ngIf="!showMainList" class="movieList">
     <!-- Search Results -->
