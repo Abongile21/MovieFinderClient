@@ -34,6 +34,7 @@ import { NavComponent } from './comps/nav/nav.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+    
   ],
   providers: [
     provideClientHydration()

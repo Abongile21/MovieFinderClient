@@ -38,5 +38,26 @@ export class MovieService {
     return this.wishList;
   }
 
+  getRecommendedMovies(): Movie[] {
+    const genreCounts: { [key: string]: number } = {};
+  
+    this.wishList.forEach(movie => {
+      genreCounts[movie.genre] = (genreCounts[movie.genre] || 0) + 1;
+    });
+  
+    let mostCommonGenre = '';
+    let maxCount = 0;
+  
+    Object.entries(genreCounts).forEach(([genre, count]) => {
+      if (count > maxCount) {
+        maxCount = count;
+        mostCommonGenre = genre;
+      }
+    });
+  
+    return this.wishList.filter(movie => movie.genre === mostCommonGenre);
+  }
+  
+
 
 }

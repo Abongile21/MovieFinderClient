@@ -1,1 +1,9 @@
-<p>recommendations works!</p>
+<div *ngIf="recommendedMovies.length">
+    <h2>Recommended Movies</h2>
+    <ul>
+      <li *ngFor="let movie of recommendedMovies">
+        {{ movie.title }}
+      </li>
+    </ul>
+  </div>
+  

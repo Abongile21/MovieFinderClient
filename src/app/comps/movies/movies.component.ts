@@ -5,40 +5,45 @@ import { Movie } from '../../movie.interface';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrl: './movies.component.css'
+  styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+  wishlist: Movie[] = [];
+  movies: Movie[] = [];
+  filteredMovies: Movie[] = [];
+  showMainList: boolean = true; // Flag to control main list visibility
 
-  wishlist: Movie[] = []
-  movies: Movie[] = []
+  constructor(private movieService: MovieService) { }
 
- constructor(private movieService: MovieService){
- }
+  ngOnInit(): void {
+    this.getAllMovies();
+  }
 
- ngOnInit(): void {
-   this.getAllMOvies()
- }
+  getAllMovies(): void {
+    this.movieService.getMovies().subscribe({
+      next: (data: any) => {
+        this.movies = data.movies;
+        this.filteredMovies = this.movies; // Initialize filteredMovies
+      },
+      error: (err) => {
+        console.error("Could not retrieve movies", err);
+      }
+    });
+  }
 
- getAllMOvies(){
-  this.movieService.getMovies().subscribe({
-    next: (data :any)=>{
-      this.movies = data.movies
-      console.log(data)
-    },error:(err)=>{
-      console.error("Could not retrieve movies", err)
+  addToWishlist(item: Movie): void {
+    this.movieService.addToWishlist(item);
+  }
+
+  onSearchChange(searchTerm: any): void {
+    if (searchTerm.trim() !== '') {
+      this.filteredMovies = this.movies.filter(movie =>
+        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      this.showMainList = false; // Hide main list when searching
+    } else {
+      this.filteredMovies = this.movies;
+      this.showMainList = true; // Show main list when no search term
     }
-  })
-
-
- }
-
- addToWishlist(item: Movie) {
-    this.movieService.addToWishlist(item)
   }
-
-  
-  viewMovie(id: Movie) {
-    
-  }
-
 }
