@@ -13,7 +13,7 @@ export class HomeComponent {
   searchTerm!: string;
 
   performSearch() {
-    // Implement your search logic here
+    
     console.log('Performing search for:', this.searchTerm);
   }
 }
