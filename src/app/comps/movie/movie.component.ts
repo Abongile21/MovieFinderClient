@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './movie.component.css'
 })
 export class MovieComponent {
-playTrailer(arg0: any) {
-throw new Error('Method not implemented.');
-}
-movie: any;
 
 }
