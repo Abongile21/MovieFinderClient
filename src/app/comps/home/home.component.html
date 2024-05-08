@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<app-search-bar (searchQueryChange)="searchMovie($event)"></app-search-bar>
+<div *ngIf="loading; else moviesList">
+  <p>Loading...</p>
+</div>
+<ng-template #moviesList>
+  <app-movies [movies]="movies" (addToWishlist)="addToWishlist($event)"></app-movies>
+  <app-wishlist [wishlist]="wishlist" (removeFromWishlist)="removeFromWishlist($event)"></app-wishlist>
+  <app-recommendation [recommendedMovies]="recommendedMovies"></app-recommendation>
+</ng-template>
+=======
     <header>
         <div class="container">
           <div id="branding">
@@ -60,3 +71,4 @@
             </div>
         </div>
     </footer>
+>>>>>>> fbb556474c06d1a626befd62910ed5c835359c6e
