@@ -3,7 +3,7 @@
 </div>
 
 <div class="movieList">
-  <div *ngIf="showMainList">
+  <!-- <div *ngIf="showMainList"> -->
     <!-- Main Movie List -->
     <div *ngFor="let movie of movies" class="movieItem">
       <img src="{{ movie.image }}" alt="{{ movie.title }}">
@@ -12,10 +12,10 @@
       <p>{{ movie.year }}</p>
       <button (click)="addToWishlist(movie)">like</button>
     </div>
-  </div>
+  <!-- </div> -->
 
-  <div *ngIf="!showMainList" class="movieList">
-    <!-- Search Results -->
+  <!-- <div *ngIf="!showMainList" class="movieList">
+    <!-- Search Results 
     <div *ngFor="let movie of filteredMovies" class="movieItem">
       <img src="{{ movie.image }}" alt="{{ movie.title }}">
       <h3>{{ movie.title }}</h3>
@@ -23,5 +23,5 @@
       <p>{{ movie.year }}</p>
       <button (click)="addToWishlist(movie)">like</button>
     </div>
-  </div>
+  </div> -->
 </div>
