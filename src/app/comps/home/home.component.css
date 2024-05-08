@@ -83,6 +83,18 @@ header h1{
     align-content: space-around;
     gap: 0.5rem;
 }
+#movieNameInput{
+    border-radius: 20px;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    border: solid black 2px;
+    color: black;
+    margin-left: 50px;   
+}
+#movieNameInput:hover{
+    background-color:wheat;
+}
 html, body {
     height: 100%;
     margin: 0;

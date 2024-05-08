@@ -9,9 +9,13 @@ import { MoviesComponent } from './comps/movies/movies.component';
 import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
 // import { SearchComponent } from './search/search.component';
+<<<<<<< HEAD
 import { SearchBarComponent } from './comps/search-bar/search-bar.component';
 import { NavBarComponent } from './comps/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+=======
+import { SearchBarComponent } from './search-bar/search-bar.component';
+>>>>>>> 5687164e5eeed7796a8a5b7027266311633d0a04
 
 
 @NgModule({
@@ -23,8 +27,7 @@ import { FormsModule } from '@angular/forms';
     WishlistComponent,
     RecommendationsComponent,
     // SearchComponent,
-    SearchBarComponent,
-    NavBarComponent
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

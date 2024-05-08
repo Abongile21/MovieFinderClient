@@ -1,10 +1,48 @@
-<app-nav-bar></app-nav-bar>
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/015b5902a4.js" crossorigin="anonymous"></script>
+    <title>Moviefinder</title>
+</head> -->
 
-<app-movies></app-movies>
+    <header>
+         <div class="container">
+          <div id="branding">
+            <h1><span class="highlight">Movie</span>Nites</h1>
+          </div>
+          <input type="text" placeholder="Enter movie Name" required  id="movieNameInput" onkeyup="searchMovie()">
+           <!-- <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" onclick="fetchWishlist()">WishList</a></li>
+                    <li><a href="#" onclick="recommendMovies()">Recommendation</a></li>
+                </ul>
+           </nav> -->
+        </div>    
+    </header> 
 
+    <div id="searchResultContainer"></div>
+    <div id="recommendationContainer">
+        <h4>This is what we think you might like</h4>
+        <div class="loader"></div>
+
+    </div>
+    <div id="wishlistContainer">
+    </div>
+
+    <!-- <div id="imageshow"></div> -->
+
+    <div class="sidebar">
+        <ul>
+          <li href="index.html">HOME</li>
+          <li href="#" onclick="fetchWishlist()">WISHLIST</li>
+          <li href="#" onclick="recommendMovies()">RECOMMENDATION</li>
+        </ul>
+      </div>
     
-
-<footer class="footer">
+    <footer class="footer">
         <div class="container3">
             <div class="row">
                 <div class="footer-col">
@@ -31,4 +69,6 @@
                 </div>
             </div>
         </div>
-</footer>
+    </footer>
+
+

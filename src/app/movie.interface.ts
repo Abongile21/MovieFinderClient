@@ -5,7 +5,5 @@
     Year : number;
     genre : string;
     poster : string;
-    description: string;
-
 
 }
