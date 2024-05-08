@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-im
 
 @Component({
   selector: 'app-recommendations',

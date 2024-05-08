@@ -11,6 +11,7 @@ import { RecommendationsComponent } from './comps/recommendations/recommendation
 // import { SearchComponent } from './search/search.component';
 import { SearchBarComponent } from './comps/search-bar/search-bar.component';
 import { NavBarComponent } from './comps/nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NavBarComponent } from './comps/nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
