@@ -21,8 +21,8 @@ export class MoviesComponent implements OnInit {
 
  getAllMOvies(){
   this.movieService.getMovies().subscribe({
-    next: (data)=>{
-      this.movies = data
+    next: (data :any)=>{
+      this.movies = data.movies
       console.log(data)
     },error:(err)=>{
       console.error("Could not retrieve movies", err)
