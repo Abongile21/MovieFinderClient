@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './movies.component.css'
 })
 export class MoviesComponent {
+MoviesComponent: any;
+movies: any;
 
 }
