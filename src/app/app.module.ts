@@ -11,9 +11,9 @@ import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
 // import { SearchComponent } from './search/search.component';
 import { SearchBarComponent } from './comps/search-bar/search-bar.component';
-import { NavBarComponent } from './comps/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './comps/nav/nav.component';
 // import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     RecommendationsComponent,
     // SearchComponent,
     SearchBarComponent,
-    NavBarComponent
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -40,4 +40,5 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
