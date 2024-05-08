@@ -9,7 +9,7 @@ import { MoviesComponent } from './comps/movies/movies.component';
 import { WishlistComponent } from './comps/wishlist/wishlist.component';
 import { RecommendationsComponent } from './comps/recommendations/recommendations.component';
 // import { SearchComponent } from './search/search.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SearchBarComponent } from './comps/search-bar/search-bar.component';
 
 
 @NgModule({

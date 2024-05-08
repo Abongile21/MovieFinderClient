@@ -1,5 +1,7 @@
-<div id="recommendationContainer">
-    <h4>This is what we think you might like</h4>
-    <div class="loader"></div>
-
-</div>
+<div *ngFor="let movie of recommendedMovies">
+    <h3>{{ movie.title }}</h3>
+    <img [src]="movie.image" [alt]="movie.title">
+    <p>{{ movie.description }}</p>
+    <button (click)="addToWishlist(movie)">Add to Wishlist</button>
+  </div>
+  
