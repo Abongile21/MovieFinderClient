@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="recommendations">
   <!-- Recommendations -->
-  <h2>Recommended Movies (Genre: {{ recommendedGenre }})</h2>
+  
   <div *ngFor="let movie of recommendedMovies" class="movieItem">
     <img src="{{ movie.image }}" alt="{{ movie.title }}">
     <h3>{{ movie.title }}</h3>
