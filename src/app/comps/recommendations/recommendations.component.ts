@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// recommendations.component.ts
+
+import { Component, Input } from '@angular/core';
 import { Movie } from '../../movie.interface';
 import { MovieService } from '../../services/movie.service';
 
@@ -7,13 +9,26 @@ import { MovieService } from '../../services/movie.service';
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.css']
 })
-export class RecommendationsComponent implements OnInit {
+export class RecommendationsComponent {
+  @Input() recommendedGenre: any;
   recommendedMovies: Movie[] = [];
 
   constructor(private movieService: MovieService) { }
 
-  ngOnInit(): void {
-    this.recommendedMovies = this.movieService.getRecommendedMovies();
+  ngOnChanges() {
+    this.loadRecommendedMovies();
   }
-  
+
+  loadRecommendedMovies() {
+    this.recommendedMovies = this.movieService.getRecommendedMovies(this.recommendedGenre);
   }
+
+  addToWishlist(movie: Movie) {
+    if (!this.movieService.isInWishlist(movie)) {
+      this.movieService.addToWishlist(movie);
+      console.log('Added to wishlist:', movie);
+    } else {
+      console.log('Movie is already in the wishlist:', movie);
+    }
+  }
+}

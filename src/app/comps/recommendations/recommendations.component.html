@@ -1,9 +1,19 @@
-<div *ngIf="recommendedMovies.length">
-    <h2>Recommended Movies</h2>
-    <ul>
-      <li *ngFor="let movie of recommendedMovies">
-        {{ movie.title }}
-      </li>
-    </ul>
+<!-- recommendations.component.html -->
+
+<div class="recommendations">
+    <!-- Recommendations -->
+    <h2>Recommended Movies (Genre: {{ recommendedGenre }})</h2>
+    <div *ngFor="let movie of recommendedMovies" class="movieItem">
+      <img src="{{ movie.image }}" alt="{{ movie.title }}">
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.genre }}</p>
+      <p>{{ movie.year }}</p>
+      <div class="buttons">
+        <button (click)="addToWishlist(movie)">
+          <i class="fas fa-heart"></i> Add to Wishlist
+        </button>
+        <button><a [routerLink]="['/movie', movie.id]"><i class="fas fa-play"></i> Watch Now</a></button>
+      </div>
+    </div>
   </div>
   
