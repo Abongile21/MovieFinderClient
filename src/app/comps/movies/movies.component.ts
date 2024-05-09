@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../movie.interface';
+import { BehaviorSubject, Observable, debounceTime, distinctUntilChanged, map } from 'rxjs';
 
 @Component({
   selector: 'app-movies',
@@ -10,20 +11,40 @@ import { Movie } from '../../movie.interface';
 export class MoviesComponent implements OnInit {
   wishlist: Movie[] = [];
   movies: Movie[] = [];
-  filteredMovies: Movie[] = [];
+  // filteredMovies: Movie[] = [];
   showMainList: boolean = true; // Flag to control main list visibility
-
-  constructor(private movieService: MovieService) { }
+  searchQuery = '';
+  filteredMovies$: Observable<any>;
+  private searchSubject = new BehaviorSubject<string>('');
+  
+  constructor(private movieService: MovieService) { 
+    this.filteredMovies$ = this.searchSubject.pipe(
+      debounceTime(300), // Wait for 300ms after each keystroke
+      distinctUntilChanged(), // Only emit if the value has changed
+      map(query => this.filterMovies(query))
+    );
+  }
 
   ngOnInit(): void {
     this.getAllMovies();
   }
 
+  filterMovies(query: string): any[] {
+    if (!query.trim()) {
+      return this.movies; 
+    }
+    
+    return this.movies.filter(movie =>
+      movie.title.toLowerCase().includes(query.toLowerCase()) ||
+      movie.genre.toLowerCase().includes(query.toLowerCase()) ||
+      movie.year.toString().includes(query)
+    );
+  }
   getAllMovies(): void {
     this.movieService.getMovies().subscribe({
       next: (data: any) => {
         this.movies = data.movies;
-        this.filteredMovies = this.movies; // Initialize filteredMovies
+        // this.filteredMovies = this.movies; // Initialize filteredMovies
       },
       error: (err) => {
         console.error("Could not retrieve movies", err);
@@ -35,15 +56,9 @@ export class MoviesComponent implements OnInit {
     this.movieService.addToWishlist(item);
   }
 
-  onSearchChange(searchTerm: any): void {
-    if (searchTerm.trim() !== '') {
-      this.filteredMovies = this.movies.filter(movie =>
-        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      this.showMainList = false; // Hide main list when searching
-    } else {
-      this.filteredMovies = this.movies;
-      this.showMainList = true; // Show main list when no search term
-    }
+ 
+
+  searchMovies() {
+    this.searchSubject.next(this.searchQuery);
   }
 }

@@ -1,10 +1,24 @@
+
 <div class="movieSearch" class=" row justify-center ">
-  <app-search-bar class=" w-50 mx-auto" (searchChange)="onSearchChange($event)"></app-search-bar>
+  <div class=" my-4 w-50 mx-auto ">
+    <input type="text" class=" w-100 p-2" [(ngModel)]="searchQuery" (input)="searchMovies()" placeholder="Search movies...">
+  </div>
 </div>
 
+
 <div class="movieList">
-  <!-- <div *ngIf="showMainList"> -->
-    <!-- Main Movie List -->
+  <div *ngFor="let movie of filteredMovies$ | async " class="movieItem">
+    <img src="{{ movie.image }}" alt="{{ movie.title }}">
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.genre }}</p>
+    <p>{{ movie.year }}</p>
+    <button (click)="addToWishlist(movie)">like</button>
+  </div>
+</div>
+
+
+<!-- <div class="movieList">
+   
     <div *ngFor="let movie of movies" class="movieItem">
       <img src="{{ movie.image }}" alt="{{ movie.title }}">
       <h3>{{ movie.title }}</h3>
@@ -12,16 +26,7 @@
       <p>{{ movie.year }}</p>
       <button (click)="addToWishlist(movie)">like</button>
     </div>
-  <!-- </div> -->
+  <!-- </div> 
 
-  <!-- <div *ngIf="!showMainList" class="movieList">
-    <!-- Search Results 
-    <div *ngFor="let movie of filteredMovies" class="movieItem">
-      <img src="{{ movie.image }}" alt="{{ movie.title }}">
-      <h3>{{ movie.title }}</h3>
-      <p>{{ movie.genre }}</p>
-      <p>{{ movie.year }}</p>
-      <button (click)="addToWishlist(movie)">like</button>
-    </div>
-  </div> -->
-</div>
+  
+</div> -->
