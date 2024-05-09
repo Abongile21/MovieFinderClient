@@ -5,6 +5,10 @@
     grid-gap: 1px;
     padding: 10px; 
 }
+.buttons{
+    display: flex;
+    gap: 9px;
+}
 /* .movieList{
 
     display: grid;

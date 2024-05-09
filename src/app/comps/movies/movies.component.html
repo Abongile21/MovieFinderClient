@@ -24,7 +24,13 @@
       <h3>{{ movie.title }}</h3>
       <p>{{ movie.genre }}</p>
       <p>{{ movie.year }}</p>
-      <button (click)="addToWishlist(movie)">like</button>
+      <div class="buttons">
+        <button (click)="addToWishlist(movie)">
+          <i class="fas fa-heart"></i>
+        </button>
+        <button><a [routerLink]="['/movie', movie.id]"><i class="fas fa-play"></i></a></button>
+      </div>
+      
     </div>
   <!-- </div> 
 
