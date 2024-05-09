@@ -1,5 +1,4 @@
-<!-- recommendations.component.html -->
-
+<app-nav></app-nav>
 <div class="recommendations">
   <!-- Recommendations -->
   <h2>Recommended Movies (Genre: {{ recommendedGenre }})</h2>
@@ -10,9 +9,9 @@
     <p>{{ movie.year }}</p>
     <div class="buttons">
       <button (click)="addToWishlist(movie)">
-        <i class="fas fa-heart"></i> Add to Wishlist
+        <i class="fas fa-heart"></i>
       </button>
-      <button><a [routerLink]="['/movie', movie.id]"><i class="fas fa-play"></i> Watch Now</a></button>
+      <button><a [routerLink]="['/movie', movie.id]"><i class="fas fa-play"></i></a></button>
     </div>
   </div>
 </div>
