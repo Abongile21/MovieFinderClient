@@ -18,7 +18,7 @@ export class WishlistComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.wishlist = this.movieService.getWishlist}
+    this.wishlist = this.movieService.getWishlist()}
   
 //  addToWishlist(movieId: number): void{
 //   const movie = this.movies.find(m => m.id === movieId);
@@ -27,6 +27,7 @@ export class WishlistComponent implements OnInit{
 //   }
 //  }
   // Method to remove movies from the wishlist
+
 
   getWishlist(){
     

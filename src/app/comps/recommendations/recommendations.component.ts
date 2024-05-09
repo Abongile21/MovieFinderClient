@@ -9,21 +9,32 @@ import { Movie } from '../../movie.interface';
 })
 export class RecommendationsComponent implements OnInit {
   recommendedMovies: Movie[] = [];
+  error: string | null = null; // Error message placeholder
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.updateRecommendations();
+    this.updateRecommendations(); // Initial call to update recommendations
     this.movieService.favList.subscribe(() => {
-      this.updateRecommendations();
+      this.updateRecommendations(); // Update recommendations when favorites change
     });
   }
 
   updateRecommendations() {
-    this.recommendedMovies = this.movieService.getRecommendedMovies();
+    try {
+      this.recommendedMovies = this.movieService.getRecommendedMovies();
+      this.error = null; // Reset error message if no error
+    } catch (error) {
+      this.error = 'Error fetching recommended movies.'; // Set error message
+      console.error('Error fetching recommended movies:', error); // Log the error
+    }
   }
 
   addToWishlist(movie: Movie) {
-    this.movieService.addToWishlist(movie);
+    try {
+      this.movieService.addToWishlist(movie);
+    } catch (error) {
+      console.error('Error adding to wishlist:', error); // Log the error
+    }
   }
 }
