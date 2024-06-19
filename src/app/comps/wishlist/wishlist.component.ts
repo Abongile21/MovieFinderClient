@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnChanges, OnInit} from '@angular/core';
 import { Movie } from '../../movie.interface';
 import { MovieService } from '../../services/movie.service';
 
@@ -29,9 +29,6 @@ export class WishlistComponent implements OnInit{
   // Method to remove movies from the wishlist
 
 
-  getWishlist(){
-    
-  }
   removeFromWishlist(movie : Movie): void{
     const index = this.movies.findIndex(m => m.title === movie.title );
     if (index !== -1) {
