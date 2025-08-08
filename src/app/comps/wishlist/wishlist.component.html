@@ -1,1 +1,9 @@
-<p>wishlist works!</p>
+<app-nav></app-nav>
+<div *ngIf="wishlist" id="wishlistContainer">
+  <div *ngFor="let movie of wishlist; index as i" class="wishlistItem">
+    <h3>{{ movie.title }}</h3>
+    <img [src]="movie.image" [alt]="movie.title">
+    <button (click)="removeItem(i,$event)"><i class="fas fa-trash"></i></button>
+  </div>
+</div>
+
